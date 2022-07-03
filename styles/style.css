@@ -5,16 +5,14 @@
 body{
     background-color: #eae7dc;
     margin: 0;
-    height: 100%;
-    width: 100%;
+
 }
 
 .container{
     
-
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto;
+    grid-template-rows: 40em auto;
     grid-template-areas: 
     'Menu Photos'
     'footer footer';
@@ -62,7 +60,7 @@ body{
     'photo-3 photo-4 photo-4'
     'photo-3 photo-4 photo-4';
     grid-template-columns: repeat(1fr 3);
-    grid-template-rows: 9em 9em 9em 9em;     
+    grid-template-rows: 9em 9em auto 9em;     
 
 }
 
