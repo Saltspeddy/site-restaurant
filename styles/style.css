@@ -5,47 +5,92 @@
 body{
     background-color: #eae7dc;
     margin: 0;
-
 }
 
-.container{
-
-
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 110vh auto;
-    grid-template-areas: 
-    'Menu Photos'
-    'footer footer';
+@media screen and (min-width:800px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 110vh auto;
+        grid-template-areas: 
+        'Menu Photos'
+        'footer footer';
+    }
+    .title{
+        font-size: 3rem;
+        text-align: center;
+    }
+    .nav{
+        font-size: 1.5em;
+    }
 }
+@media screen and (max-width:799px){
+    .container{
+        display: grid;
+        grid-template-rows: 10vh 80vh auto;
+        grid-template-areas: 
+        'Menu'
+        'Photos'
+        'footer';
+    }
+    .menu{
+        position: relative;
 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:center;
+    }
+    .nav-bar{
+        position: relative;
+        margin: 0px 15px;
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+    }
+    /* .nav-bar{
+        text-align: right;
+    } */
+    .title{
+        margin: 0px 15px;
+        font-size: 2rem;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .nav{
+        font-size: 1.25em;
+        padding: 0 5px;
+    }
+    .photo-1{
+        background-position-x:-110px ;
+    }
+    .photo-2{
+        background-position-x:-50px ;
+    }
+    .photo-3{
+        background-position-x:-10px ;
+    }
+    
+}
 .menu{
-    height:auto;
     grid-area: Menu;
     background-color: #e98074;
 }
-
-
-
 .title{
-    text-align: center;
     font-family: 'Lobster', cursive;
-    font-size: 3rem;
 }
-
 .nav-bar{
-
     line-height: 4em;
-    list-style-type: none;
-    text-align: left;
+    text-align: center;
 }
 .nav{
-    /* margin: 2em 0; */
+ 
+    color:antiquewhite;
     text-align: center;
-    font-size: 1.5em;
-    color: antiquewhite;
     transition: background-color 0.5s;
 }
+
 .nav:hover{
     background-color: #6c3b35;
 }
@@ -65,74 +110,61 @@ body{
 }
 
 .photo-1{
-    position: relative;
     grid-area: photo-1;
     background-image: 
     url('https://www.claytonhotels.com/dublin-burlington-road/wp-content/uploads/sites/7/2020/08/Saba-Secret-Garden-1024x659-1.jpg');
-    background-size: cover;
-
-    transition: 0.5s;
-}.photo-1:hover{
-    filter: brightness(75%);
 }
 
 .photo-2{
-    position: relative;
     grid-area: photo-2;
     background-image: url('https://s3.amazonaws.com/assets.inarkansas.com/25441/trios.jpg') ; 
-    background-size: cover;
-    transition: 0.5s;
-
-}.photo-2:hover{
-    filter: brightness(75%);
 }
 
 .photo-3{
-    position: relative;
     grid-area: photo-3;
     background-image: url('https://www.woohome.com/wp-content/uploads/2015/06/outdoor-dining-spaces-woohome-16.jpg') ;
-    background-size: cover;
-    transition: 0.5s;
+}
 
-}.photo-3:hover{
-    filter: brightness(75%);
-}
-:root{
-    --ht: 45vh;
-}
 .photo-4{
-    position: relative;
     grid-area: photo-4;
     background-image: url('https://c.pxhere.com/photos/f2/d6/bar_caf_chair_empty_furniture_garden_green_nature-1253366.jpg!d');
+}
+.photo-1,
+ .photo-2,
+  .photo-3,
+   .photo-4{
+    position: relative;
     background-size: cover;
     transition: 0.5s;
+}
 
-}.photo-4:hover{
+.photo-1:hover,
+ .photo-2:hover,
+  .photo-3:hover,
+   .photo-4:hover{
     filter: brightness(75%);
-
 }
 /* Codul de aparitie al textului  */
+.photo-1:hover p,
+ .photo-2:hover p,
+  .photo-3:hover p,
+   .photo-4:hover p{
+    opacity: 1;
+    transform: translateY(0px);
+}
 p{  
-
+    line-height: 20px;
     position: absolute;
-    /* height: 100%; */
-    width: 90%;
     bottom: 0;
     left: 0;
-    padding-top: calc( var(--ht) - 10vh) ;
     padding-left: 20px;
-    vertical-align: text-bottom;
-
-
+    transform: translateY(30px);
     transition: 0.25s;
     opacity: 0;
     color: #ffffff;
 
     font-family: 'Gulzar', serif;
     font-size: 20px;
-}
-p:hover{
-    opacity: 1;
 }
 
 footer{
