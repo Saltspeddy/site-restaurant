@@ -165,7 +165,7 @@ p{
     color: #ffffff;
 
     font-family: 'Gulzar', serif;
-    font-size: 20px;
+    font-size: clamp( 20px, 20px +1vw, 2rem);
 }
 
 footer{
@@ -250,7 +250,9 @@ footer{
     overflow-y: scroll;
     color: #E9E3E6;
     display: grid;
-    grid-template-rows: repeat( auto-fit , min-max( 250px, 350px));
+    gap: 1rem;
+    grid-template-rows:  repeat( auto-fit, minmax( auto, 130px ));
+
 }
 
 .scroll-text{
